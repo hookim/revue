@@ -16,7 +16,7 @@ import com.ssafy.web.member.service.MemberService;
 import jakarta.servlet.http.HttpServletRequest;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin("*")
 @RequestMapping("/members")
 public class MemberController {
 	private final MemberService memberService;
