@@ -1,7 +1,6 @@
 package com.ssafy.web.home.service.HomeService;
 
 import com.ssafy.web.home.model.Home;
-import com.ssafy.web.home.model.mapper.HomeMapper;
 import com.ssafy.web.home.repository.HomeRepository;
 import org.springframework.stereotype.Service;
 
