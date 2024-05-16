@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+  database:
+    image: mysql
+    container_name: mysql_container
+    environment:
+      - MYSQL_DATABASE=ssafyfinal
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_USER=ssafy
+      - MYSQL_PASSWORD=ssafy
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql-db:/var/lib/mysql
+    networks:
+      - revue-network
+
+  application:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:8080"
+    depends_on:
+      - database
+    container_name: spring_container
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://database:3306/ssafyfinal?useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 1234
+    networks:
+      - revue-network
+
+volumes:
+  mysql-db:
+
+networks:
+  revue-network:
