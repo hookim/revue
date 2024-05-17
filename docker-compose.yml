@@ -2,6 +2,7 @@ version: "3"
 
 services:
   database:
+
     image: mysql
     container_name: mysql_container
     environment:
@@ -18,9 +19,9 @@ services:
       - revue-network
 
   application:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
+#      context: .
+#      dockerfile: Dockerfile
     ports:
       - "80:8080"
     depends_on:

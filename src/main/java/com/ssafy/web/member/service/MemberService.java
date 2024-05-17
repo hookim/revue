@@ -51,17 +51,19 @@ public class MemberService {
 		}
 
 		try{
-			String accessToken = UUID.randomUUID().toString();
-			Date accessExpiration = new Date(System.currentTimeMillis() + 60 * 1000);
-			accessMemStorage.getStorage().put(accessToken, new TupleStorage(member.getId(), accessExpiration));
-
-			String refreshToken = UUID.randomUUID().toString();
-			Date refreshExpire = new Date(System.currentTimeMillis() + 24 * 60 * 60 * 1000);
-			refreshMemStorage.getStorage().put(refreshToken, new TupleStorage(member.getId(), refreshExpire));
+//			String accessToken = UUID.randomUUID().toString();
+//			Date accessExpiration = new Date(System.currentTimeMillis() + 60 * 1000);
+//			accessMemStorage.getStorage().put(accessToken, new TupleStorage(member.getId(), accessExpiration));
+//
+//			String refreshToken = UUID.randomUUID().toString();
+//			Date refreshExpire = new Date(System.currentTimeMillis() + 24 * 60 * 60 * 1000);
+//			refreshMemStorage.getStorage().put(refreshToken, new TupleStorage(member.getId(), refreshExpire));
+//
+//			result.put("access-token", accessToken);
+//			result.put("refresh-token", refreshToken);
 
 			result.put("msg", "로그인 성공");
-			result.put("access-token", accessToken);
-			result.put("refresh-token", refreshToken);
+
 			return result;
 		}
 		catch(Exception e){
