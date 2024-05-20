@@ -12,80 +12,42 @@ public class Home {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private String title;
+    private String description;
     private String price;
-    private String constructionYear;
-    private String legalDong;
-    private String aptName;
-    private String exclusiveArea;
-    private String addressNumber;
-    private String floor;
+    private Long lat;
+    private Long lon;
+
+    public Home(Long id, String title, String description, String price, Long lat, Long lon) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.lat = lat;
+        this.lon = lon;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 
     public String getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public Long getLat() {
+        return lat;
     }
 
-    public String getConstructionYear() {
-        return constructionYear;
-    }
-
-    public void setConstructionYear(String constructionYear) {
-        this.constructionYear = constructionYear;
-    }
-
-    public String getLegalDong() {
-        return legalDong;
-    }
-
-    public void setLegalDong(String legalDong) {
-        this.legalDong = legalDong;
-    }
-
-    public String getAptName() {
-        return aptName;
-    }
-
-    public void setAptName(String aptName) {
-        this.aptName = aptName;
-    }
-
-    public String getExclusiveArea() {
-        return exclusiveArea;
-    }
-
-    public void setExclusiveArea(String exclusiveArea) {
-        this.exclusiveArea = exclusiveArea;
-    }
-
-    public String getAddressNumber() {
-        return addressNumber;
-    }
-
-    public void setAddressNumber(String addressNumber) {
-        this.addressNumber = addressNumber;
-    }
-
-    public String getFloor() {
-        return floor;
-    }
-
-    public void setFloor(String floor) {
-        this.floor = floor;
-    }
-
-    @Override
-    public String toString() {
-        return "Home{" +
-                "price='" + price + '\'' +
-                ", constructionYear='" + constructionYear + '\'' +
-                ", legalDong='" + legalDong + '\'' +
-                ", aptName='" + aptName + '\'' +
-                ", exclusiveArea='" + exclusiveArea + '\'' +
-                ", addressNumber='" + addressNumber + '\'' +
-                ", floor='" + floor + '\'' +
-                '}';
+    public Long getLon() {
+        return lon;
     }
 }
