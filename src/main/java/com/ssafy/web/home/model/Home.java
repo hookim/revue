@@ -15,11 +15,12 @@ public class Home {
     private String title;
     private String description;
     private String price;
-    private Long lat;
-    private Long lon;
+    private Double lat;
+    private Double lon;
 
-    public Home(Long id, String title, String description, String price, Long lat, Long lon) {
-        this.id = id;
+    public Home(){}
+
+    public Home(String title, String description, String price, Double lat, Double lon) {
         this.title = title;
         this.description = description;
         this.price = price;
@@ -43,11 +44,11 @@ public class Home {
         return price;
     }
 
-    public Long getLat() {
+    public Double getLat() {
         return lat;
     }
 
-    public Long getLon() {
+    public Double getLon() {
         return lon;
     }
 }
